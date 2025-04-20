@@ -1,3 +1,7 @@
 # Python virtual‑envs
 venv/
 .venv/
+
+# Ignore any generated pdfs
+*.pdf
+
