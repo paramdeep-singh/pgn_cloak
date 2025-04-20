@@ -24,6 +24,41 @@ position *before* your chosen start move, plus a quick ASCII legend.
 
 ---
 
+## What does the PDF look like?
+
+- Eight‑by‑eight ASCII board of the position before your chosen
+`--start` move.
+
+- Four‑row legend such as:
+
+  `Pieces  K:43  Q:49  R:50  B:34  N:46`
+
+  `Files   a:65  b:66  …  h:72`
+
+  `Ranks   1:17  2:18  …  8:24`
+
+  `Symbols  x:88  +:11  #:03  =:29  O:47  -:13`
+
+- Two columns of encoded rows below, for example:
+```
+33.. 05 77 29 18 95 12 09 71 06 54 28 44
+34.  03 54 65 70 25 95 07 88 12 19 33 02
+```
+
+### How do I decode a row?
+
+1. **Identify k** – the very first number (e.g. 05).  That is your
+per‑row offset.
+
+2. **Read each number after k until you hit 95**.  Subtract k
+from each: (77‑5)=72, (29‑5)=24, (18‑5)=13, …
+
+3. **Translate** each result using the legend: 72→h, 24→8, 13→-, …
+
+4. **Write the SAN** you obtain (O‑O, hxg5+, …), play it on the
+wooden board, and move on.
+
+
 ## Quick‑start (virtual env)
 
 ```bash
