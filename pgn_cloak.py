@@ -1,24 +1,4 @@
 #!/usr/bin/env python3
-"""
- pgn_cloak.py – spoiler‑proof study sheet generator (multiplatform)
-
- 2025‑04‑17 update
- -----------------
- * **start/end parsing** supports Black ply via the form "..35" (two dots).
-   Examples: --start 10 (White 10th); --start ..35 (Black 35th).
- * **Row labels** now use the conventional ".." for Black (e.g. "35..").
- * **Board snapshot** – the position *before* the first included move is
-   rendered as an ASCII 8×8 board at the top of the first page.
- * **Legend table** – ASCII indices are grouped into four easy‑scan rows
-   (Pieces, Files, Ranks, Symbols).
- * **Pagination** – no one‑page limit; each page can hold up to two columns.
-   When both columns fill, a new page starts automatically.
-
- Run `pip install reportlab python-chess requests beautifulsoup4` once, then:
-
-     ./pgn_cloak.py "https://www.chessgames.com/perl/chessgame?gid=1110913" \
-                    --start ..33 --end 36 -o sheet.pdf
-"""
 
 from __future__ import annotations
 
